@@ -1,0 +1,8 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+    <h2><a href="news/">{{ item.title }}</a></h2>
+    <p>{{ item.created | date:"Y-m-d" }} {{ item.created | time:"H:i:s" }}</p>
+    <p>{{ item.text | truncatechars:100 | linebreaksbr }}</p>
+    <br/>
+{% endblock %}
