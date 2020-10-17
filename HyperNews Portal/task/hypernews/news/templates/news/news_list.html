@@ -1,8 +1,15 @@
 {% extends 'news/base.html' %}
 
 {% block content %}
-    <h2><a href="news/">{{ item.title }}</a></h2>
-    <p>{{ item.created | date:"Y-m-d" }} {{ item.created | time:"H:i:s" }}</p>
-    <p>{{ item.text | truncatechars:100 | linebreaksbr }}</p>
-    <br/>
+    <h2>Hyper news</h2>
+    {% for date,content in news.items %}
+        <h4>{{ date }}</h4>
+        <ul>
+        {% for item in content %}
+            <li><a href="/news/{{ item.link }}/" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+        </ul>
+        <br/>
+    {% endfor %}
+    <a href="/news/create/" target="_blank">Create</a>
 {% endblock %}
