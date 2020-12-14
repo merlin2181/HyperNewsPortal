@@ -1,10 +1,6 @@
 {% extends 'news/base.html' %}
 
 {% block content %}
-    <form action="" method="get">
-        {{ form }}
-        <input type="submit" value="Search">
-    </form>
     {% for date,content in news.items %}
         <h4>{{ date }}</h4>
         <ul>
@@ -14,7 +10,5 @@
         </ul>
         <br/>
     {% endfor %}
-    <a href="/news/create/" target="_blank">Create</a>
-    <br>
     <a href="/news/">Home</a>
 {% endblock %}

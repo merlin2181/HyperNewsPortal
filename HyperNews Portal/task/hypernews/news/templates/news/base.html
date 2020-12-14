@@ -1,8 +1,14 @@
+<!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
+        <link rel="stylesheet" target="_blank" href="{% static 'css/base.css' %}">
+	    <meta charset="utf-8">
         <title>HyperNews Portal</title>
     </head>
     <body>
+        <h2>Hyper news</h2>
+        <br>
         {% block content %}
         {% endblock %}
     </body>
